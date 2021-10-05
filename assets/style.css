@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    width: 700px;
+    height: 300px;
+}
+
+#searchBox {
+    width: 100%;
+    
+}
+
+.searchBox {
+    margin-left: 20px;
+}
+
+.customButton {
+    margin-left: 50px;
+}
