@@ -1,0 +1,20 @@
+.text-center {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Satisfy';
+}
+
+/* Results page specific styling */
+.results-full {
+    padding-top: 50px;
+}
+
+.results-section {
+    border-left: 2px solid darkcyan;
+}
+
+.main-section {
+    min-height: 90vh;
+}
