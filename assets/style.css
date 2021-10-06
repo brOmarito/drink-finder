@@ -1,22 +1,23 @@
+body {
+    background-color: rgb(169, 201, 250);
+}
+
 main {
   display: flex;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 150px; 
 }
 
 .custom-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-style: solid;
-    border-width: 2px;
     width: 700px;
     height: 300px;
 }
 
-#searchBox {
+#textBox {
     width: 100%;
-    
 }
 
 .searchBox {
@@ -24,5 +25,12 @@ main {
 }
 
 .customButton {
-    margin-left: 50px;
+    margin-left: 58px;
+}
+
+#question {
+    line-height: 300%;
+    color: white;
+    font-weight: bold;
+    padding-right: 5px;
 }
