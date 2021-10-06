@@ -5,6 +5,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Drink Finder - Results</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
       <link rel="stylesheet" href="./assets/style.css">
   </head>
@@ -15,8 +17,26 @@
     </header>
 
     <main>
-
-
+        <div class="grid-container full results-full">
+            <div class="grid-x grid-margin-x main-section">
+                <div class="cell medium-3 results-search-area">
+                    <form>
+                        <div class="grid-container">
+                          <div class="grid-x grid-padding-x">
+                            <div class="medium-12 cell">
+                              <label>Search:
+                                <input type="text" placeholder="What do you want to drink?">
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="cell medium-9 results-section">
+                  <h2 class="text-center">Results</h2>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="./assets/homepage.js"></script>

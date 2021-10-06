@@ -2,7 +2,16 @@ body {
     background-color: rgb(169, 201, 250);
 }
 
-main {
+.text-center {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Satisfy';
+}
+
+/* Home page specific styling */
+.home-main {
   display: flex;
   justify-content: center;
   margin-top: 150px; 
@@ -33,4 +42,27 @@ main {
     color: white;
     font-weight: bold;
     padding-right: 5px;
+}
+
+/* Results page specific styling */
+.results-full {
+    padding-top: 50px;
+}
+
+.results-section {
+    border-left: 2px solid rgba(105, 124, 153, 0.274);
+    padding-top: 25px;
+}
+
+.main-section {
+    min-height: 90vh;
+}
+
+.results-section h2 {
+    color: whitesmoke;
+    font-size: 75px;
+}
+
+.results-search-area {
+    padding-top: 75px;
 }
