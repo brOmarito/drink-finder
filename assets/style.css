@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(169, 201, 250);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px; 
+}
+
+.custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
+}
+
+#textBox {
+    width: 100%;
+}
+
+.searchBox {
+    margin-left: 20px;
+}
+
+.customButton {
+    margin-left: 58px;
+}
+
+#question {
+    line-height: 300%;
+    color: white;
+    font-weight: bold;
+    padding-right: 5px;
+}
