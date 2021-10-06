@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(169, 201, 250);
+}
+
 .text-center {
     text-align: center;
 }
@@ -6,15 +10,51 @@ h2 {
     font-family: 'Satisfy';
 }
 
+/* Home page specific styling */
+.home-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px; 
+}
+
+.custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
+}
+
+#textBox {
+    width: 100%;
+}
+
+.searchBox {
+    margin-left: 20px;
+}
+
+.customButton {
+    margin-left: 58px;
+}
+
+#question {
+    line-height: 300%;
+    color: white;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
 /* Results page specific styling */
 .results-full {
     padding-top: 50px;
 }
 
 .results-section {
-    border-left: 2px solid darkcyan;
+    border-left: 2px solid rgb(105, 124, 153);
 }
 
 .main-section {
     min-height: 90vh;
 }
+
+
