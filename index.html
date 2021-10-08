@@ -25,7 +25,7 @@
 
         <div class="" id="sliderDiv">
           <div class="switch">
-            <input class="switch-input" id="radio-switch1" type="radio" checked name="radioSwitches">
+            <input class="switch-input" id="radio-switch1" type="radio" checked name="radioSwitches" value="0" >
             <label class="switch-paddle" for="radio-switch1">
               <span class="switch-active" aria-hidden="true">Yes</span>
               <span class="switch-inactive" aria-hidden="true">No</span>
@@ -33,7 +33,7 @@
           </div>
           
           <div class="switch">
-            <input class="switch-input" id="radio-switch2" type="radio" name="radioSwitches">
+            <input class="switch-input" id="radio-switch2" type="radio" name="radioSwitches" value="1">
             <label class="switch-paddle" for="radio-switch2">
               <span class="switch-active" aria-hidden="true">Yes</span>
               <span class="switch-inactive" aria-hidden="true">No</span>
@@ -44,14 +44,15 @@
         <div class="searchBox">
           <input class="" type="text" id="textBox">
           <div id="buttonDiv">
-            <a class="button small" href="#">Random</a>
-            <a class="customButton button small" href="#">Search</a>
+            <button class="button small" id="randomBtn">Random</button>
+            <button class="customButton button small" id="searchBtn">Search</button>
           </div>
         </div>
       </section>
       
 
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="./assets/homepage.js"></script>
   </body>
