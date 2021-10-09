@@ -33,7 +33,7 @@ function searchDrink() {
     if (input) {
         if (nameSwitch.is(":checked")) {
             fetchName(encodeURI(input));
-        } else { 
+        } else {
             fetchIngredient(encodeURI(input));
         }
     }
@@ -58,7 +58,7 @@ function fetchIngredient(input) {
 // Fetches api for name
 function fetchName(input) {
     var url = nameUrl + input
-    
+
     fetch(url)
         .then(function(response) {
             if (response.ok) {

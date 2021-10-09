@@ -9,14 +9,14 @@ var url = "./results.html"
 function search() {
     if (radioswitch1.is(":checked")) {
         var type = "name"
-    } else { 
+    } else {
         var type = "ingredient"
     }
-    
+
     var textBox = $("#textBox")
     var input = textBox.val()
     var resultsPage = url + "?input=" + input +"/"+ type
-    
+
     location.replace(resultsPage)
 }
 function random() {
