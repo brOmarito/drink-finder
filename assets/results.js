@@ -1,6 +1,13 @@
-var ingredientUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i="
+var ingredientUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
 var nameUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 var randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+var idUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+
+var searchBtn = $("#searchBtn");
+var randomBtn = $("#randomBtn");
+var nameSwitch = $("#name-switch");
+var ingrSwitch = $("#ingr-switch");
+var textBox = $(".results-searchbar");
 
 // Checks document location for values passed from homepage.js, runs function for either name, ingredient, or random
 function urlCheck() {
@@ -19,6 +26,19 @@ function urlCheck() {
         randomDrink()
     }
 }
+
+function searchDrink() {
+    var input = textBox.val();
+
+    if (input) {
+        if (nameSwitch.is(":checked")) {
+            fetchName(encodeURI(input));
+        } else { 
+            fetchIngredient(encodeURI(input));
+        }
+    }
+}
+
 // Fetches api for ingredient
 function fetchIngredient(input) {
     var url = ingredientUrl + input
@@ -28,6 +48,9 @@ function fetchIngredient(input) {
             if (response.ok) {
                 response.json().then(function(data) {
                     console.log(data)
+                    data.drinks.forEach((drink, index) => {
+                        fetchId(drink.idDrink, index);
+                    });
                 })
             }
         })
@@ -41,26 +64,47 @@ function fetchName(input) {
             if (response.ok) {
                 response.json().then(function(data) {
                     console.log(data)
+                    createResultCard(data.drinks);
                 })
             }
         })
 }
 // Fetches api for random
-function randomDrink() {   
+function randomDrink() {
     fetch(randomUrl)
         .then(function(response) {
             if (response.ok) {
                 response.json().then(function(data) {
                     console.log(data)
+                    createResultCard(data.drinks);
                 })
             }
-        })  
+        })
+}
+
+function fetchId(input, index) {
+    var url = idUrl + input
+
+    fetch(url)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(data) {
+                    console.log(data)
+                    createResultCard(data.drinks, index);
+                })
+            }
+        })
 }
 
 urlCheck()
 
-function createResultCard(drinkArray) {
-    let resultSection = document.querySelector('.results-card-section');
+function createResultCard(drinkArray, index) {
+    let resultSectionExisting = document.querySelector('.results-card-section');
+    let resultSection = document.createElement('div');
+    if(index && index > 0) {
+        resultSection = resultSectionExisting;
+    }
+
     drinkArray.forEach(drink => {
         let drinkCard = document.createElement('div');
         drinkCard.classList.add('card', 'drink-result');
@@ -70,6 +114,7 @@ function createResultCard(drinkArray) {
 
         resultSection.appendChild(drinkCard);
     });
+    resultSectionExisting.innerHTML = resultSection.innerHTML;
 }
 
 function createResultHeader(drinkName) {
@@ -185,3 +230,12 @@ function createReultTableData(drinkObj) {
     }
     return tableBody;
 }
+
+randomBtn.on("click", randomDrink);
+searchBtn.on("click", searchDrink);
+textBox.on("keydown", function(event) {
+    // event.preventDefault();
+    if (event.key === "Enter") {
+        searchDrink();
+    }
+});
