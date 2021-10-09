@@ -70,10 +70,17 @@ h1, h2 {
     width: 50%;
 }
 
+.button {
+    font-size: 15px !important;
+}
+
 .button,
 .switch-label {
     color: whitesmoke !important;
     font-weight: bold !important;
+}
+
+.switch-label {
     font-size: 18px !important;
 }
 
