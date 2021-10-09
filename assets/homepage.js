@@ -2,11 +2,8 @@ var searchBtn = $("#searchBtn")
 var randomBtn = $("#randomBtn")
 var radioswitch1 = $("#radio-switch1")
 var radioswitch2 = $("#radio-switch2")
-// var tequilaBtn = $("#tequila")
-// var vodkaBtn = $("#vodka")
-// var ginBtn = $("#gin")
 
-var url = "./results.html"
+var resultUrl = "./results.html"
 
 // Checks if name or ingredient is selected, creates url and changes location to it
 function search() {
@@ -18,13 +15,15 @@ function search() {
     
     var textBox = $("#textBox")
     var input = textBox.val()
-    var resultsPage = url + "?input=" + input +"/"+ type
-    
-    location.replace(resultsPage)
+
+    if (input) {
+        var resultsPage = resultUrl + "?input=" + input +"/"+ type
+        location.replace(resultsPage)
+    }  
 }
 
 function random() {
-    var resultsPage = url + "?input=random/random"
+    var resultsPage = resultUrl + "?input=random/random"
     location.replace(resultsPage)
 }
 
@@ -35,28 +34,21 @@ $("#tequila, #vodka, #gin").on("click", function(event) {
     if (eventDetails == "Tequila") {
         var input = "Tequila"
         var type = "ingredient"
-        var textBox = $("#textBox")
-        var resultsPage = url + "?input=" + input +"/"+ type
+        var resultsPage = resultUrl + "?input=" + input +"/"+ type
     
         location.replace(resultsPage)
         
-    }
-
-    else if (eventDetails == "Vodka") {
-        var input = "Vodka"
-        var type = "ingredient"
-        var textBox = $("#textBox")
-        var resultsPage = url + "?input=" + input +"/"+ type
-    
-        location.replace(resultsPage)
+    } else if (eventDetails == "Vodka") {
+            var input = "Vodka"
+            var type = "ingredient"
+            var resultsPage = resultUrl + "?input=" + input +"/"+ type
         
-    }
-
-    else {
-        var input = "Gin"
-        var type = "ingredient"
-        var textBox = $("#textBox")
-        var resultsPage = url + "?input=" + input +"/"+ type
+            location.replace(resultsPage)
+            
+        } else {
+            var input = "Gin"
+            var type = "ingredient"
+            var resultsPage = resultUrl + "?input=" + input +"/"+ type
     
         location.replace(resultsPage)
         
