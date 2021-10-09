@@ -23,24 +23,28 @@
                     <form>
                         <div class="grid-container">
                           <div class="grid-x grid-padding-x">
-                            <div class="medium-12 cell">
-                              <label>Search:
-                                <input class="results-searchbar" type="text" placeholder="What do you want to drink?">
-                              </label>
-                              <div class="" id="sliderDiv">
-                                <div class="switch">
-                                  <input class="switch-input" id="radio-switch1" type="radio" checked name="radioSwitches">
-                                  <label class="switch-paddle" for="radio-switch1">
+                            <div class="large-12 cell">
+                              <input class="results-searchbar" type="text" placeholder="What do you want to drink?">
+                              <div class="results-buttons-search">
+                                <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
+                                <a id="searchBtn" class="customButton button small" href="#">Search</a>
+                              </div>
+                              <div id="sliderDiv">
+                                <div class="switch result-switch">
+                                  <input class="switch-input" id="name-switch" type="radio" checked name="radioSwitches">
+                                  <label class="switch-paddle" for="name-switch">
                                     <span class="switch-active" aria-hidden="true">Yes</span>
                                     <span class="switch-inactive" aria-hidden="true">No</span>
                                   </label>
+                                  <label class="switch-label result-switch-label" for="name-switch">By name?</label>
                                 </div>
-                                <div class="switch">
-                                  <input class="switch-input" id="radio-switch2" type="radio" name="radioSwitches">
-                                  <label class="switch-paddle" for="radio-switch2">
+                                <div class="switch result-switch">
+                                  <input class="switch-input" id="ingr-switch" type="radio" name="radioSwitches">
+                                  <label class="switch-paddle" for="ingr-switch">
                                     <span class="switch-active" aria-hidden="true">Yes</span>
                                     <span class="switch-inactive" aria-hidden="true">No</span>
                                   </label>
+                                  <label class="switch-label result-switch-label" for="ingr-switch">By ingredient?</label>
                                 </div>
                               </div>
                             </div>
@@ -51,45 +55,6 @@
                 <div class="cell medium-9 results-section">
                   <h2 class="text-center">Results</h2>
                   <div class="results-card-section">
-                    <!-- <div class="card drink-result">
-                      <div class="card-divider result-title-section">
-                        <h2 class="result-title">Tom Collins</h2>
-                      </div>
-                      <div class="result-info-section">
-                        <div class="grid-x grid-margin-x">
-                          <div class="cell medium-7 text-info">
-                            <h4>Ingredients</h4>
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th width="200">Measurement</th>
-                                  <th>Ingredient</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Content Goes Here</td>
-                                  <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                                </tr>
-                                <tr>
-                                  <td>Content Goes Here</td>
-                                  <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                                </tr>
-                                <tr>
-                                  <td>Content Goes Here</td>
-                                  <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <h4>Instructions</h4>
-                            <p>Put the stuff in a glass and make it, duh</p>
-                          </div>
-                          <div class="cell medium-5 drink-picture">
-                            <img src="/assets/pics/tom-collins.png" />
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
                   </div>
                 </div>
             </div>
