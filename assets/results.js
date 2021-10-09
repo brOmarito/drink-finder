@@ -3,6 +3,8 @@ var nameUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 var randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 var idUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
 
+var resultUrl = "./results.html"
+
 var searchBtn = $("#searchBtn");
 var randomBtn = $("#randomBtn");
 var nameSwitch = $("#name-switch");
@@ -38,6 +40,34 @@ function searchDrink() {
         }
     }
 }
+
+$("#tequila, #vodka, #gin").on("click", function(event) {
+    eventDetails = event.target.textContent;
+    console.log(eventDetails)
+
+    if (eventDetails == "Tequila") {
+        var input = "Tequila"
+        var type = "ingredient"
+        var resultsPage = resultUrl + "?input=" + input +"/"+ type
+    
+        location.replace(resultsPage)
+        
+    } else if (eventDetails == "Vodka") {
+            var input = "Vodka"
+            var type = "ingredient"
+            var resultsPage = resultUrl + "?input=" + input +"/"+ type
+        
+            location.replace(resultsPage)
+            
+        } else {
+            var input = "Gin"
+            var type = "ingredient"
+            var resultsPage = resultUrl + "?input=" + input +"/"+ type
+    
+        location.replace(resultsPage)
+        
+    }
+});
 
 // Fetches api for ingredient
 function fetchIngredient(input) {
