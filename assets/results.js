@@ -1,84 +1,65 @@
+var ingredientUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i="
+var nameUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
+var randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 
-// Checks document location for values passed from homepage.js
-// Runs function for either name, ingredient, or random
-function SliderCheck() {
+// Checks document location for values passed from homepage.js, runs function for either name, ingredient, or random
+function urlCheck() {
 
     var url = document.location.search;
 
     var split = url.split("=")
-    
     var searchset = split[1]
     var splitset = searchset.split("/")
-
     var input = splitset[0]
     var type = splitset[1]
 
     if (type == "ingredient") {
-        FetchIngredient(input)
+        fetchIngredient(input)
     } else if (type == "name") {
-        FetchName(input)
+        fetchName(input)
     } else if (type == "random") {
-        RandomDrink()
+        randomDrink()
     }
 }
-
 // Fetches api for ingredient
-function FetchIngredient(input) {
-    var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + input
+function fetchIngredient(input) {
+
+    var url = ingredientUrl + input
 
     fetch(url)
-
         .then(function(response) {
-
             if (response.ok) {
-
                 response.json().then(function(data) {
-
                     console.log(data)
-
                 })
             }
         })
 }
-
 // Fetches api for name
-function FetchName(input) {
+function fetchName(input) {
 
-    var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + input
-
+    var url = nameUrl + input
+    
     fetch(url)
-
         .then(function(response) {
-
             if (response.ok) {
-
                 response.json().then(function(data) {
-
                     console.log(data)
-
                 })
             }
         })
 }
-
 // Fetches api for random
-function RandomDrink() {
-
-    var url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-
-    fetch(url)
-
+function randomDrink() {
+    
+    fetch(randomUrl)
         .then(function(response) {
-
             if (response.ok) {
-
                 response.json().then(function(data) {
-
                     console.log(data)
-
                 })
             }
         })  
 }
 
-SliderCheck()
+urlCheck()

@@ -3,7 +3,10 @@ var randomBtn = $("#randomBtn")
 var radioswitch1 = $("#radio-switch1")
 var radioswitch2 = $("#radio-switch2")
 
-function SliderCheck() {
+var url = "./results.html"
+
+// Checks if name or ingredient is selected, creates url and changes location to it
+function search() {
 
     if (radioswitch1.is(":checked")) {
         var type = "name"
@@ -12,22 +15,16 @@ function SliderCheck() {
     }
     
     var textBox = $("#textBox")
-
     var input = textBox.val()
 
-    var url = "./results.html?input=" + input +"/"+ type
-
-    console.log(url)
-
-    location.replace(url)
+    var resultsPage = url + "?input=" + input +"/"+ type
+    location.replace(resultsPage)
 }
-
-function Random() {
-
-    var url = "./results.html?input=random/random"
+function random() {
     
-    location.replace(url)
+    var resultsPage = url + "?input=random/random"
+    location.replace(resultsPage)
 }
 
-searchBtn.on("click", SliderCheck)
-randomBtn.on("click", Random)
+searchBtn.on("click", search)
+randomBtn.on("click", random)
