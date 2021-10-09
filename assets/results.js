@@ -2,6 +2,7 @@ var ingredientUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
 var nameUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 var randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 var idUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+var barUrl = "https://api.openbrewerydb.org/breweries?by_city="
 
 var searchBtn = $("#searchBtn");
 var randomBtn = $("#randomBtn");
@@ -57,6 +58,7 @@ function fetchIngredient(input) {
             }
         })
 }
+
 // Fetches api for name
 function fetchName(input) {
     var url = nameUrl + input
@@ -71,6 +73,7 @@ function fetchName(input) {
             }
         })
 }
+
 // Fetches api for random
 function randomDrink() {
     fetch(randomUrl)
@@ -82,6 +85,35 @@ function randomDrink() {
                 })
             }
         })
+}
+
+// Gets city name and fetches openbrewery api
+function bars() {
+    // var input = ADD QUERY SELECTOR FOR CITY NAME HERE
+    var url = barUrl + input
+
+    fetch(url)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(data) {
+                    console.log(data)
+                    barApiData(data)
+                })
+            }
+        })
+}
+
+// Assigns data from api to variables
+function barApiData(data) {
+    for (let i = 0; i<data.length; i++) {
+        var name = data[i].name
+        var city = data[i].city
+        var address = data[i].street
+        var phoneNum =  data[i].phone
+        var website = data[i].website_url  
+        
+        console.log(name,city,address,phoneNum,website)
+    }
 }
 
 function fetchId(input, index) {
@@ -97,8 +129,6 @@ function fetchId(input, index) {
             }
         })
 }
-
-urlCheck()
 
 function createResultCard(drinkArray, index) {
     let resultSectionExisting = document.querySelector('.results-card-section');
@@ -232,6 +262,8 @@ function createReultTableData(drinkObj) {
     }
     return tableBody;
 }
+
+urlCheck()
 
 randomBtn.on("click", randomDrink);
 searchBtn.on("click", searchDrink);

@@ -9,75 +9,73 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Satisfy&M+PLUS+Rounded+1c:wght@100&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
       <link rel="stylesheet" href="./assets/style.css">
   </head>
 
-<body>
-  <nav class="top-bar topbar-responsive">
-    <div class="top-bar-title">
-      <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
-        <button class="menu-icon" type="button" data-toggle></button>
-      </span>
-      <a class="topbar-responsive-logo" href="#"><strong>Drink Finder</strong></a>
-    </div>
-    <div id="topbar-responsive" class="topbar-responsive-links">
-      <div class="top-bar-right">
-        <ul class="menu simple vertical medium-horizontal">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Contact</a></li>
-          <li>
-            <div class="dropdown">
-              <button class="dropbtn button hollow topbar-responsive-button">Spirits 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Tequila</a>
-                <a href="#">Vodka</a>
-                <a href="#">Gin</a>
-              </div>
-            </div> 
-          </li>
-        </ul>
+  <body>
+    <nav class="top-bar topbar-responsive">
+      <div class="top-bar-title">
+        <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle></button>
+        </span>
+        <a class="topbar-responsive-logo" href="#"><strong>Drink Finder</strong></a>
       </div>
-    </div>
-  </nav>
-  <main class="home-main">
-    <h1 id="title">Drink Finder</h1>
-    <section class="custom-container">
-      <div id="slider-div">
-        <div class="switch switch-and-label">
-          <label class="switch-label" for="radio-switch1">Search by drink name?</label>
-          <input class="switch-input" id="radio-switch1" type="radio" checked name="radioSwitches">
-          <label class="switch-paddle" for="radio-switch1">
-            <span class="switch-active" aria-hidden="true">Yes</span>
-            <span class="switch-inactive" aria-hidden="true">No</span>
-          </label>
-        </div>
-        <div class="switch switch-and-label">
-          <label class="switch-label" for="radio-switch2">Search by drink ingredient?</label>
-          <input class="switch-input" id="radio-switch2" type="radio" name="radioSwitches">
-          <label class="switch-paddle" for="radio-switch2">
-            <span class="switch-active" aria-hidden="true">Yes</span>
-            <span class="switch-inactive" aria-hidden="true">No</span>
-          </label>
+      <div id="topbar-responsive" class="topbar-responsive-links">
+        <div class="top-bar-right">
+          <ul class="menu simple vertical medium-horizontal">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn button hollow topbar-responsive-button">Spirits 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Tequila</a>
+                  <a href="#">Vodka</a>
+                  <a href="#">Gin</a>
+                </div>
+              </div> 
+            </li>
+          </ul>
         </div>
       </div>
-      <div id="home-search" class="searchBox">
-        <input type="text" id="textBox" placeholder="Let's get you something to drink">
-        <div id="buttonDiv">
-          <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
-          <a id="searchBtn" class="customButton button small" href="#">Search</a>
+    </nav>
+    <main class="home-main">
+      <h1 id="title">Drink Finder</h1>
+      <section class="custom-container">
+        <div id="slider-div">
+          <div class="switch switch-and-label">
+            <label class="switch-label" for="radio-switch1">Search by drink name?</label>
+            <input class="switch-input" id="radio-switch1" type="radio" checked name="radioSwitches">
+            <label class="switch-paddle" for="radio-switch1">
+              <span class="switch-active" aria-hidden="true">Yes</span>
+              <span class="switch-inactive" aria-hidden="true">No</span>
+            </label>
+          </div>
+          <div class="switch switch-and-label">
+            <label class="switch-label" for="radio-switch2">Search by drink ingredient?</label>
+            <input class="switch-input" id="radio-switch2" type="radio" name="radioSwitches">
+            <label class="switch-paddle" for="radio-switch2">
+              <span class="switch-active" aria-hidden="true">Yes</span>
+              <span class="switch-inactive" aria-hidden="true">No</span>
+            </label>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="./assets/homepage.js"></script>
+        <div id="home-search" class="searchBox">
+          <input type="text" id="textBox" placeholder="Let's get you something to drink">
+          <div id="buttonDiv">
+            <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
+            <a id="searchBtn" class="customButton button small" href="#">Search</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="./assets/homepage.js"></script>
   </body>
 </html>

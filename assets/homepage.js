@@ -3,7 +3,7 @@ var randomBtn = $("#randomBtn")
 var radioswitch1 = $("#radio-switch1")
 var radioswitch2 = $("#radio-switch2")
 
-var url = "./results.html"
+var resultUrl = "./results.html"
 
 // Checks if name or ingredient is selected, creates url and changes location to it
 function search() {
@@ -15,12 +15,15 @@ function search() {
 
     var textBox = $("#textBox")
     var input = textBox.val()
-    var resultsPage = url + "?input=" + input +"/"+ type
 
-    location.replace(resultsPage)
+    if (input) {
+        var resultsPage = resultUrl + "?input=" + input +"/"+ type
+        location.replace(resultsPage)
+    }  
 }
+
 function random() {
-    var resultsPage = url + "?input=random/random"
+    var resultsPage = resultUrl + "?input=random/random"
     location.replace(resultsPage)
 }
 
