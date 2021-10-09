@@ -55,6 +55,7 @@ function fetchIngredient(input) {
             }
         })
 }
+
 // Fetches api for name
 function fetchName(input) {
     var url = nameUrl + input
@@ -69,6 +70,7 @@ function fetchName(input) {
             }
         })
 }
+
 // Fetches api for random
 function randomDrink() {
     fetch(randomUrl)
@@ -95,8 +97,6 @@ function fetchId(input, index) {
             }
         })
 }
-
-urlCheck()
 
 function createResultCard(drinkArray, index) {
     let resultSectionExisting = document.querySelector('.results-card-section');
@@ -230,6 +230,8 @@ function createReultTableData(drinkObj) {
     }
     return tableBody;
 }
+
+urlCheck()
 
 randomBtn.on("click", randomDrink);
 searchBtn.on("click", searchDrink);
