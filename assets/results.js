@@ -1,0 +1,1 @@
+function createResultCard(ingredientsArray, instructionsArray) {}
