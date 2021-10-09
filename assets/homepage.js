@@ -2,6 +2,9 @@ var searchBtn = $("#searchBtn")
 var randomBtn = $("#randomBtn")
 var radioswitch1 = $("#radio-switch1")
 var radioswitch2 = $("#radio-switch2")
+// var tequilaBtn = $("#tequila")
+// var vodkaBtn = $("#vodka")
+// var ginBtn = $("#gin")
 
 var resultUrl = "./results.html"
 
@@ -21,10 +24,47 @@ function search() {
         location.replace(resultsPage)
     }  
 }
+
 function random() {
     var resultsPage = resultUrl + "?input=random/random"
     location.replace(resultsPage)
 }
 
+$("#tequila, #vodka, #gin").on("click", function(event) {
+    eventDetails = event.target.textContent;
+    console.log(eventDetails)
+
+    if (eventDetails == "Tequila") {
+        var input = "Tequila"
+        var type = "ingredient"
+        var textBox = $("#textBox")
+        var resultsPage = url + "?input=" + input +"/"+ type
+    
+        location.replace(resultsPage)
+        
+    }
+
+    else if (eventDetails == "Vodka") {
+        var input = "Vodka"
+        var type = "ingredient"
+        var textBox = $("#textBox")
+        var resultsPage = url + "?input=" + input +"/"+ type
+    
+        location.replace(resultsPage)
+        
+    }
+
+    else {
+        var input = "Gin"
+        var type = "ingredient"
+        var textBox = $("#textBox")
+        var resultsPage = url + "?input=" + input +"/"+ type
+    
+        location.replace(resultsPage)
+        
+    }
+})
+
 searchBtn.on("click", search)
 randomBtn.on("click", random)
+
