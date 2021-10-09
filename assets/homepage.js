@@ -2,9 +2,6 @@ var searchBtn = $("#searchBtn")
 var randomBtn = $("#randomBtn")
 var radioswitch1 = $("#radio-switch1")
 var radioswitch2 = $("#radio-switch2")
-// var tequilaBtn = $("#tequila")
-// var vodkaBtn = $("#vodka")
-// var ginBtn = $("#gin")
 
 var resultUrl = "./results.html"
 
@@ -37,28 +34,21 @@ $("#tequila, #vodka, #gin").on("click", function(event) {
     if (eventDetails == "Tequila") {
         var input = "Tequila"
         var type = "ingredient"
-        var textBox = $("#textBox")
-        var resultsPage = url + "?input=" + input +"/"+ type
+        var resultsPage = resultUrl + "?input=" + input +"/"+ type
     
         location.replace(resultsPage)
         
-    }
-
-    else if (eventDetails == "Vodka") {
-        var input = "Vodka"
-        var type = "ingredient"
-        var textBox = $("#textBox")
-        var resultsPage = url + "?input=" + input +"/"+ type
-    
-        location.replace(resultsPage)
+    } else if (eventDetails == "Vodka") {
+            var input = "Vodka"
+            var type = "ingredient"
+            var resultsPage = resultUrl + "?input=" + input +"/"+ type
         
-    }
-
-    else {
-        var input = "Gin"
-        var type = "ingredient"
-        var textBox = $("#textBox")
-        var resultsPage = url + "?input=" + input +"/"+ type
+            location.replace(resultsPage)
+            
+        } else {
+            var input = "Gin"
+            var type = "ingredient"
+            var resultsPage = resultUrl + "?input=" + input +"/"+ type
     
         location.replace(resultsPage)
         
