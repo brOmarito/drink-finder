@@ -16,12 +16,12 @@ function search() {
     
     var textBox = $("#textBox")
     var input = textBox.val()
-
     var resultsPage = url + "?input=" + input +"/"+ type
+    
     location.replace(resultsPage)
 }
 function random() {
-    
+
     var resultsPage = url + "?input=random/random"
     location.replace(resultsPage)
 }
