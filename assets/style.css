@@ -154,6 +154,41 @@ h1, h2 {
     align-items: center;
 }
 
+.left-pane {
+    height: 100vh;
+}
+
+.beer-sect {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.beer-sect hr {
+    border-top: 2px solid black;
+}
+
+.beer-icon {
+    width: 50%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.beer-result-card {
+    font-family: 'Montserrat';
+}
+
+.beer-result-section {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.beer-search {
+    max-height: 500px;
+    /* overflow-y: scroll; */
+}
+
 /* .drink-picture,
 .text-info {
     width: 50%;

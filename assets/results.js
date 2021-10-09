@@ -9,6 +9,10 @@ var randomBtn = $("#randomBtn");
 var nameSwitch = $("#name-switch");
 var ingrSwitch = $("#ingr-switch");
 var textBox = $(".results-searchbar");
+var beerSearchBtn = $("#beer-search-btn");
+var beerSearchBar = $('.beer-searchbar');
+
+$(document).foundation();
 
 // Checks document location for values passed from homepage.js, runs function for either name, ingredient, or random
 function urlCheck() {
@@ -34,7 +38,7 @@ function searchDrink() {
     if (input) {
         if (nameSwitch.is(":checked")) {
             fetchName(encodeURI(input));
-        } else { 
+        } else {
             fetchIngredient(encodeURI(input));
         }
     }
@@ -60,7 +64,7 @@ function fetchIngredient(input) {
 // Fetches api for name
 function fetchName(input) {
     var url = nameUrl + input
-    
+
     fetch(url)
         .then(function(response) {
             if (response.ok) {
@@ -86,8 +90,8 @@ function randomDrink() {
 }
 
 // Gets city name and fetches openbrewery api
-function bars() {
-    // var input = ADD QUERY SELECTOR FOR CITY NAME HERE
+function getBars() {
+    const input = beerSearchBar.val();
     var url = barUrl + input
 
     fetch(url)
@@ -103,14 +107,60 @@ function bars() {
 
 // Assigns data from api to variables
 function barApiData(data) {
+    let beerResSect = document.querySelector('.beer-result-section');
+    let newDiv = document.createElement('div');
+
     for (let i = 0; i<data.length; i++) {
-        var name = data[i].name
-        var city = data[i].city
-        var address = data[i].street
-        var phoneNum =  data[i].phone
-        var website = data[i].website_url  
-        
-        console.log(name,city,address,phoneNum,website)
+        const name = data[i].name
+        const city = data[i].city
+        const address = data[i].street
+        const phoneNum =  data[i].phone
+        const website = data[i].website_url
+        let beerCard = document.createElement('div');
+        beerCard.classList.add('beer-result-card');
+
+        const border = document.createElement('hr');
+
+        beerCard.appendChild(border);
+
+        let breweryName = document.createElement('h5');
+        breweryName.textContent = name;
+        beerCard.appendChild(breweryName);
+
+        handleContactInfo(beerCard, address, city, phoneNum);
+        handleWebsiteInfo(beerCard, website)
+
+        newDiv.appendChild(beerCard);
+    }
+    beerResSect.innerHTML = newDiv.innerHTML;
+}
+
+function handleWebsiteInfo(div, website) {
+    if (website) {
+        let websiteEl = document.createElement('a');
+        websiteEl.setAttribute('href', website);
+        websiteEl.textContent = "Visit their site!";
+
+        div.appendChild(websiteEl)
+    }
+}
+
+function handleContactInfo(div, address, city, phoneNum) {
+    if (address || city || phoneNum) {
+        let addressInfo = document.createElement('p');
+        let addressHtmlStr = "";
+        if (address) {
+            addressHtmlStr = addressHtmlStr + address + '<br>';
+        }
+        if (city) {
+            addressHtmlStr = addressHtmlStr + city + '<br>';
+        }
+        if (phoneNum) {
+            addressHtmlStr = addressHtmlStr + phoneNum;
+        }
+        addressInfo.innerHTML = addressHtmlStr;
+
+        div.appendChild(addressInfo);
     }
 }
 
@@ -265,6 +315,7 @@ urlCheck()
 
 randomBtn.on("click", randomDrink);
 searchBtn.on("click", searchDrink);
+beerSearchBtn.on("click", getBars);
 textBox.on("keydown", function(event) {
     // event.preventDefault();
     if (event.key === "Enter") {
