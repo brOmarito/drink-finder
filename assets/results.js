@@ -4,7 +4,7 @@ function createResultCard(drinkArray) {
         let drinkCard = document.createElement('div');
         drinkCard.classList.add('card', 'drink-result');
 
-        drinkCard.appendChild(createResultHeader(drinkObj.strDrink));
+        drinkCard.appendChild(createResultHeader(drink.strDrink));
         drinkCard.appendChild(createResultContent(drink));
 
         resultSection.appendChild(drinkCard);
@@ -32,7 +32,9 @@ function createResultContent(drinkObj) {
     drinkContentGrid.classList.add('grid-x', 'grid-margin-x');
 
     drinkContentGrid.appendChild(createResultTextInfo(drinkObj));
-    drinkContentGrid.appendChild(createImageArea(drinkObj.strImageSource));
+    drinkContentGrid.appendChild(createImageArea(drinkObj.strDrinkThumb));
+
+    drinkContentParent.appendChild(drinkContentGrid);
 
     return drinkContentParent;
 }
@@ -54,10 +56,14 @@ function createResultTextInfo(drinkObj) {
     let drinkTextInfo = document.createElement('div');
     drinkTextInfo.classList.add('cell', 'medium-7', 'text-info');
 
-    drinkTextInfo.appendChild(createResultTable);
+    let ingrHeader = document.createElement('h4');
+    ingrHeader.textContent = "Inredients";
+    drinkTextInfo.appendChild(ingrHeader);
+
     drinkTextInfo.appendChild(createResultTable(drinkObj));
 
     let instrHeader = document.createElement('h4');
+    instrHeader.textContent = "Instructions";
     drinkTextInfo.appendChild(instrHeader);
 
     let instrText = document.createElement('p');
@@ -72,6 +78,8 @@ function createResultTable(drinkObj) {
 
     ingrTable.appendChild(createResultTableHeader());
     ingrTable.appendChild(createReultTableData(drinkObj));
+
+    return ingrTable;
 }
 
 function createResultTableHeader() {
