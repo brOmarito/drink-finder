@@ -9,6 +9,8 @@ var nameSwitch = $("#name-switch");
 var ingrSwitch = $("#ingr-switch");
 var textBox = $(".results-searchbar");
 
+$(document).foundation();
+
 // Checks document location for values passed from homepage.js, runs function for either name, ingredient, or random
 function urlCheck() {
     var url = document.location.search;

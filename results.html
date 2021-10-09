@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Drink Finder - Results</title>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Satisfy&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-      <link rel="stylesheet" href="./assets/style.css">
-  </head>
-  <body>
 
-    <header>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drink Finder - Results</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Satisfy&family=M+PLUS+Rounded+1c&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
 
-    </header>
+<body>
 
-    <main>
-        <div class="grid-container full results-full">
-            <div class="grid-x grid-margin-x main-section">
-                <div class="cell medium-3 results-search-area">
-                    <form>
-                        <div class="grid-container">
-                          <div class="grid-x grid-padding-x">
-                            <div class="large-12 cell">
-                              <input class="results-searchbar" type="text" placeholder="What do you want to drink?">
-                              <div class="results-buttons-search">
-                                <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
-                                <a id="searchBtn" class="customButton button small" href="#">Search</a>
-                              </div>
-                              <div id="sliderDiv">
-                                <div class="switch result-switch">
-                                  <input class="switch-input" id="name-switch" type="radio" checked name="radioSwitches">
-                                  <label class="switch-paddle" for="name-switch">
-                                    <span class="switch-active" aria-hidden="true">Yes</span>
-                                    <span class="switch-inactive" aria-hidden="true">No</span>
-                                  </label>
-                                  <label class="switch-label result-switch-label" for="name-switch">By name?</label>
-                                </div>
-                                <div class="switch result-switch">
-                                  <input class="switch-input" id="ingr-switch" type="radio" name="radioSwitches">
-                                  <label class="switch-paddle" for="ingr-switch">
-                                    <span class="switch-active" aria-hidden="true">Yes</span>
-                                    <span class="switch-inactive" aria-hidden="true">No</span>
-                                  </label>
-                                  <label class="switch-label result-switch-label" for="ingr-switch">By ingredient?</label>
-                                </div>
-                              </div>
-                            </div>
+  <header>
+
+  </header>
+
+  <main>
+    <div class="grid-container full results-full">
+      <div class="grid-x grid-margin-x main-section">
+        <div class="full cell medium-3 results-search-area">
+          <div class="left-pane grid-y">
+              <div class="medium-4 cell">
+                <form>
+                  <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                      <div class="large-12 cell">
+                        <input class="results-searchbar" type="text" placeholder="What do you want to drink?">
+                        <div class="results-buttons-search">
+                          <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
+                          <a id="searchBtn" class="customButton button small" href="#">Search</a>
+                        </div>
+                        <div id="sliderDiv">
+                          <div class="switch result-switch">
+                            <input class="switch-input" id="name-switch" type="radio" checked name="radioSwitches">
+                            <label class="switch-paddle" for="name-switch">
+                              <span class="switch-active" aria-hidden="true">Yes</span>
+                              <span class="switch-inactive" aria-hidden="true">No</span>
+                            </label>
+                            <label class="switch-label result-switch-label" for="name-switch">By name?</label>
+                          </div>
+                          <div class="switch result-switch">
+                            <input class="switch-input" id="ingr-switch" type="radio" name="radioSwitches">
+                            <label class="switch-paddle" for="ingr-switch">
+                              <span class="switch-active" aria-hidden="true">Yes</span>
+                              <span class="switch-inactive" aria-hidden="true">No</span>
+                            </label>
+                            <label class="switch-label result-switch-label" for="ingr-switch">By ingredient?</label>
                           </div>
                         </div>
-                    </form>
-                </div>
-                <div class="cell medium-9 results-section">
-                  <h2 class="text-center">Results</h2>
-                  <div class="results-card-section">
+                      </div>
+                    </div>
                   </div>
-                </div>
-            </div>
+                </form>
+              </div>
+              <div class="beer-sect cell auto">
+                <ul class="accordion beer-accordion" data-accordion data-allow-all-closed="true">
+                  <li class="accordion-item" data-accordion-item>
+                    <a href="" class="accordion-title">More of a beer person?</a>
+                    <div class="accordion-content beer-search" data-tab-content>
+                      <input class="beer-searchbar" type="text" placeholder="Enter a city to find beer near you">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+          </div>
         </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="./assets/results.js"></script>
-  </body>
+        <div class="cell medium-9 results-section">
+          <h2 class="text-center">Results</h2>
+          <div class="results-card-section">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <script src="./assets/results.js"></script>
+</body>
+
 </html>
