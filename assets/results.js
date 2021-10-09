@@ -4,9 +4,7 @@ var randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 
 // Checks document location for values passed from homepage.js, runs function for either name, ingredient, or random
 function urlCheck() {
-
     var url = document.location.search;
-
     var split = url.split("=")
     var searchset = split[1]
     var splitset = searchset.split("/")
@@ -23,7 +21,6 @@ function urlCheck() {
 }
 // Fetches api for ingredient
 function fetchIngredient(input) {
-
     var url = ingredientUrl + input
 
     fetch(url)
@@ -37,7 +34,6 @@ function fetchIngredient(input) {
 }
 // Fetches api for name
 function fetchName(input) {
-
     var url = nameUrl + input
     
     fetch(url)
@@ -50,8 +46,7 @@ function fetchName(input) {
         })
 }
 // Fetches api for random
-function randomDrink() {
-    
+function randomDrink() {   
     fetch(randomUrl)
         .then(function(response) {
             if (response.ok) {

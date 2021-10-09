@@ -7,7 +7,6 @@ var url = "./results.html"
 
 // Checks if name or ingredient is selected, creates url and changes location to it
 function search() {
-
     if (radioswitch1.is(":checked")) {
         var type = "name"
     } else { 
@@ -21,7 +20,6 @@ function search() {
     location.replace(resultsPage)
 }
 function random() {
-
     var resultsPage = url + "?input=random/random"
     location.replace(resultsPage)
 }
