@@ -45,6 +45,7 @@ h1, h2 {
     color: whitesmoke;
 }
 
+
 #textBox {
     width: 50%;
     border-radius: 20px;
@@ -68,6 +69,10 @@ h1, h2 {
 
 #buttonDiv {
     width: 50%;
+}
+
+#drinkIcon {
+  max-width: 50px;
 }
 
 .button {
@@ -217,6 +222,7 @@ h1, h2 {
 .topbar-responsive .menu a {
   color: #fefefe;
   transition: color 0.15s ease-in;
+  font-size: 25px;
 }
 
 .topbar-responsive .menu a:hover {
@@ -255,6 +261,7 @@ h1, h2 {
   .topbar-responsive .top-bar-title {
     position: relative;
     width: 100%;
+    
   }
   .topbar-responsive .top-bar-title span {
     position: absolute;
@@ -263,10 +270,17 @@ h1, h2 {
     border-radius: 5px;
     padding: 0.25rem 0.45rem;
     top: 50%;
+  
   }
   .topbar-responsive .top-bar-title span .menu-icon {
     margin-bottom: 4px;
+    
   }
+}
+
+.top-bar-title {
+  font-family: 'Satisfy';
+  font-size: 50px;
 }
 
 .dropdown {
