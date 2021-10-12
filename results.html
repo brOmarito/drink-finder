@@ -16,7 +16,7 @@
 
 <body>
 
-  <main>
+  <main class="results-main">
     <nav class="top-bar topbar-responsive">
       <div class="top-bar-title">
         <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
@@ -47,58 +47,60 @@
     </nav>
     <div class="grid-container full results-full">
       <div class="grid-x grid-margin-x main-section">
-        <div class="full cell medium-3 results-search-area">
+        <div class="full cell large-3 results-search-area">
           <div class="left-pane grid-y">
-              <div class="medium-4 cell">
-                <form>
-                  <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                      <div class="large-12 cell">
+            <div class="medium-4 cell">
+              <form>
+                <div class="grid-x grid-padding-x">
+                  <div class="large-12 cell">
+                    <div class="grid-y grid-padding-y">
+                      <div class="results-searchbar-sect large-1 cell">
                         <input class="results-searchbar" type="text" placeholder="What do you want to drink?">
-                        <div class="results-buttons-search">
-                          <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
-                          <a id="searchBtn" class="customButton button small" href="#">Search</a>
+                      </div>
+                      <div class="results-buttons-search large-1 cell">
+                        <a id="randomBtn" class="button small" href="#">Get Me Drunk!</a>
+                        <a id="searchBtn" class="customButton button small" href="#">Search</a>
+                      </div>
+                      <div id="sliderDiv large-2 cell">
+                        <div class="switch result-switch">
+                          <input class="switch-input" id="name-switch" type="radio" checked name="radioSwitches">
+                          <label class="switch-paddle" for="name-switch">
+                            <span class="switch-active" aria-hidden="true">Yes</span>
+                            <span class="switch-inactive" aria-hidden="true">No</span>
+                          </label>
+                          <label class="switch-label result-switch-label" for="name-switch">By name?</label>
                         </div>
-                        <div id="sliderDiv">
-                          <div class="switch result-switch">
-                            <input class="switch-input" id="name-switch" type="radio" checked name="radioSwitches">
-                            <label class="switch-paddle" for="name-switch">
-                              <span class="switch-active" aria-hidden="true">Yes</span>
-                              <span class="switch-inactive" aria-hidden="true">No</span>
-                            </label>
-                            <label class="switch-label result-switch-label" for="name-switch">By name?</label>
-                          </div>
-                          <div class="switch result-switch">
-                            <input class="switch-input" id="ingr-switch" type="radio" name="radioSwitches">
-                            <label class="switch-paddle" for="ingr-switch">
-                              <span class="switch-active" aria-hidden="true">Yes</span>
-                              <span class="switch-inactive" aria-hidden="true">No</span>
-                            </label>
-                            <label class="switch-label result-switch-label" for="ingr-switch">By ingredient?</label>
-                          </div>
+                        <div class="switch result-switch">
+                          <input class="switch-input" id="ingr-switch" type="radio" name="radioSwitches">
+                          <label class="switch-paddle" for="ingr-switch">
+                            <span class="switch-active" aria-hidden="true">Yes</span>
+                            <span class="switch-inactive" aria-hidden="true">No</span>
+                          </label>
+                          <label class="switch-label result-switch-label" for="ingr-switch">By ingredient?</label>
                         </div>
                       </div>
                     </div>
                   </div>
-                </form>
-              </div>
-              <div class="beer-sect cell auto">
-                <ul class="accordion beer-accordion" data-accordion data-allow-all-closed="true">
-                  <li class="accordion-item is-active" data-accordion-item>
-                    <a href="" class="accordion-title">More of a beer person?</a>
-                    <div class="accordion-content beer-search" data-tab-content>
-                      <img class="beer-icon" src="./assets/pics/beer-icon.png" />
-                      <input class="beer-searchbar" type="text" placeholder="Enter a city to find beer near you">
-                      <a id="beer-search-btn" class="button large" href="#">Beer Me!</a>
-                      <div class="beer-result-section">
-                      </div>
+                </div>
+              </form>
+            </div>
+            <div class="beer-sect medium-4 cell">
+              <ul class="accordion beer-accordion" data-accordion data-allow-all-closed="true">
+                <li class="accordion-item is-active" data-accordion-item>
+                  <a href="" class="accordion-title">More of a beer person?</a>
+                  <div class="accordion-content beer-search" data-tab-content>
+                    <img class="beer-icon" src="./assets/pics/beer-icon.png" />
+                    <input class="beer-searchbar" type="text" placeholder="Enter a city to find beer near you">
+                    <a id="beer-search-btn" class="button large" href="#">Beer Me!</a>
+                    <div class="beer-result-section">
                     </div>
-                  </li>
-                </ul>
-              </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="cell medium-9 results-section">
+        <div class="cell large-9 results-section">
           <h2 class="text-center">Results</h2>
           <div class="results-card-section">
           </div>
