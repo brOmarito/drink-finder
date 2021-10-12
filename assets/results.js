@@ -4,6 +4,8 @@ var randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 var idUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
 var barUrl = "https://api.openbrewerydb.org/breweries?by_city="
 
+var resultUrl = "./results.html"
+
 var searchBtn = $("#searchBtn");
 var randomBtn = $("#randomBtn");
 var nameSwitch = $("#name-switch");

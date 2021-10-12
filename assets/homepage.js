@@ -27,33 +27,6 @@ function random() {
     location.replace(resultsPage)
 }
 
-$("#tequila, #vodka, #gin").on("click", function(event) {
-    eventDetails = event.target.textContent;
-    console.log(eventDetails)
-
-    if (eventDetails == "Tequila") {
-        var input = "Tequila"
-        var type = "ingredient"
-        var resultsPage = resultUrl + "?input=" + input +"/"+ type
-    
-        location.replace(resultsPage)
-        
-    } else if (eventDetails == "Vodka") {
-            var input = "Vodka"
-            var type = "ingredient"
-            var resultsPage = resultUrl + "?input=" + input +"/"+ type
-        
-            location.replace(resultsPage)
-            
-        } else {
-            var input = "Gin"
-            var type = "ingredient"
-            var resultsPage = resultUrl + "?input=" + input +"/"+ type
-    
-        location.replace(resultsPage)
-        
-    }
-})
 
 searchBtn.on("click", search)
 randomBtn.on("click", random)
