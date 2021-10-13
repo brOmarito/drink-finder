@@ -91,20 +91,37 @@ function randomDrink() {
         })
 }
 
-// Gets city name and fetches openbrewery api
-function getBars() {
+// Gets city name for new search, saves new search to localstorage
+function getBar() {
     const input = beerSearchBar.val();
+
+    localStorage.setItem("lastSearch", input)
+    fetchUrl(input)     
+}  
+
+// upon page load checks for bar search history
+function runLastSearch() {
+    var search = localStorage.getItem("lastSearch")
+
+    if (search != "" && search != null) {
+        beerSearchBar.val(search)
+        fetchUrl(search)
+    }
+}
+
+// fetches api
+function fetchUrl(input) {
     var url = barUrl + input
 
     fetch(url)
-        .then(function(response) {
-            if (response.ok) {
-                response.json().then(function(data) {
-                    console.log(data)
-                    barApiData(data)
-                })
-            }
-        })
+            .then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(data) {
+                        console.log(data)
+                        barApiData(data)
+                    })
+                }
+            })
 }
 
 // Assigns data from api to variables
@@ -314,13 +331,17 @@ function createReultTableData(drinkObj) {
 }
 
 urlCheck()
+runLastSearch()
 
 randomBtn.on("click", randomDrink);
 searchBtn.on("click", searchDrink);
-beerSearchBtn.on("click", getBars);
 textBox.on("keydown", function(event) {
-    // event.preventDefault();
     if (event.key === "Enter") {
         searchDrink();
+    }
+});
+beerSearchBar.on("keydown", function(event) {
+    if (event.key === "Enter") {
+        getBar();
     }
 });
